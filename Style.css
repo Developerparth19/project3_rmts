@@ -1,0 +1,785 @@
+html{
+  transition: 15ms;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+section{
+ width: 100%;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+
+}
+
+/* Navbar Style */
+.navbar {
+  background-color: #FB4141;
+  padding: 15px 0;
+  position: sticky; /* Make the navbar sticky */
+  top: 0; /* Stick it to the top of the page */
+  z-index: 1000; /* Ensure it stays on top of other content */
+  width: 100%;  /* Ensure the navbar spans the full width */
+}
+
+.NavLogo{
+  width: 100%;
+  height: auto;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: text-shadow 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.navbar-brand:hover {
+  text-shadow: 1px 1px 2px yellow;
+  color: #fff; /* Ensure text color stays consistent on hover */
+}
+
+/* Navbar Link */
+.navbar-nav .nav-link {
+  color: white;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #4742e6;
+  text-shadow: 0px 0px 5px #0802A3; /* Adds glow effect */
+  text-decoration: underline;
+}
+
+
+
+
+
+ /* Make carousel images responsive and limit the height */
+ .carousel-item img {
+    object-fit: cover; /* Ensure the images cover the container without distortion */
+    max-height: 450px; /* Limit the height to a reasonable value */
+    width: 100%;
+  }
+
+  /* Adjust carousel caption */
+  .carousel-caption {
+   
+    padding: 15px;
+    bottom: 10%;
+  }
+
+  /* Ensure carousel text is readable on all screen sizes */
+  .carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  /* Tablet Responsiveness */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .carousel-caption h5 {
+      font-size: 1.8rem; /* Slightly smaller font size on tablets */
+    }
+
+    .carousel-caption p {
+      font-size: 0.95rem; /* Adjust font size for tablets */
+    }
+
+    .carousel-item img {
+      max-height: 400px; /* Limit height for tablets */
+    }
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .carousel-caption h5 {
+      font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .carousel-caption p {
+      font-size: 0.875rem; /* Smaller font size for mobile */
+    }
+
+    .carousel-item img {
+      max-height: 300px; /* Reduce image height on smaller screens */
+    }
+  }
+
+  /* Services */
+
+
+  /* Services Section */
+
+.service-card {
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive styling for Services section */
+  #services .row {
+    display: flex;
+    flex-wrap: wrap; /* Ensures the cards can wrap to the next row on smaller screens */
+    gap: 20px; /* Adds some space between columns */
+  }
+  
+  #services .col-md-4 {
+    flex: 1 1 calc(33.333% - 20px); /* 3-column layout on larger screens */
+  }
+  
+  #services .card {
+    margin: 0 auto; /* Centers the card within its column */
+  }
+  
+  /* Mobile Responsiveness (up to 576px) */
+  @media (max-width: 576px) {
+    #services .col-md-4 {
+      flex: 1 1 100%; /* Stacks the cards vertically */
+    }
+  }
+  
+  /* Tablet Responsiveness (576px to 768px) */
+  @media (min-width: 576px) and (max-width: 768px) {
+    #services .col-md-4 {
+      flex: 1 1 calc(50% - 20px); /* 2-column layout on tablets */
+    }
+  }
+  
+
+  /* From Uiverse.io by kamehame-ha */ 
+  .cards {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-between;
+    filter: drop-shadow(3px 3px 2px black);
+  }
+  
+  .cards .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+    flex: 1; /* Ensures cards are flexible */
+    height: 100%; /* Make sure the cards have a full height within their container */
+  }
+  
+  .cards .red {
+    background-color: #f43f5e;
+  }
+  
+  .cards .blue {
+    background-color: #ffcc00;
+  }
+  
+  .cards .green {
+    background-color: #22c55e;
+  }
+  
+  .cards .card p.tip {
+    font-size: 1em;
+    font-weight: 700;
+  }
+  
+  .cards .card p.second-text {
+    font-size: .7em;
+  }
+  
+  .cards .card:hover {
+    transform: scale(1.1, 1.1);
+  }
+  
+  .cards:hover > .card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+  }
+  
+  /* Media Query for phone screens */
+  @media (max-width: 767px) {
+    .cards {
+      flex-direction: column; /* Stack cards vertically on mobile */
+      align-items: center; /* Center align the cards */
+      gap: 20px; /* Increase the gap between cards */
+    }
+  
+    .cards .card {
+      width: 100%; /* Ensure each card takes full width */
+      height: auto; /* Allow height to adjust based on content */
+    }
+  }
+  
+  /* Optional: You can also add more media queries for tablet screens */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .cards {
+      flex-direction: row; /* Row direction on tablet */
+    }
+  
+    .cards .card {
+      width: 45%; /* Each card takes up 45% of the container width on tablets */
+    }
+  }
+  
+
+  #WhyToChoose{
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+    background-blend-mode: multiply,multiply;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Review Section */
+
+  .review-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Hover effect */
+  .review-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .review-image {
+    width: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    height: auto;
+  }
+
+  .review-content {
+    flex-grow: 1;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .review-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .review-rating {
+    color: #ffc107;
+  }
+   /* Review Section */
+
+
+   /* PRICE TAG  */
+
+   .PriceTag {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.CourseCardTitle {
+    font-family: Cinzel, serif;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.CourseCardPara {
+    font-family: Cinzel, serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #34495e;
+}
+
+.car-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Light semi-transparent background */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.car-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .car-section {
+        text-align: left;
+    }
+}
+
+
+     /* contact section */
+     #ContactSection{
+      background-image: linear-gradient(to right, #434343 0%, black 100%);
+      color: #ddd;
+      width: 100%;
+      padding: 20px;
+     }
+
+
+
+     /* SERVICE CARD */
+     .ServicesContent {
+      text-align: center;
+      padding: 40px 20px;
+      background: #0077b6;
+  }
+  .ServiceHeading {
+      color: black;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+  }
+  .ServiceCards-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+  }
+  .ServiceCards-client {
+      background: gold;
+      width: 18rem;
+      padding: 20px;
+      border: 4px solid #00b4d8;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+      color: black;
+      transition: all 0.3s ease;
+  }
+  .ServiceCards-client:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  .ServiceTitle {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: black;
+  }
+  .ServiceDescription {
+      font-size: 1rem;
+      margin-top: 10px;
+      color: black;
+      text-align: left;
+      font-weight: 700;
+  }
+  ul {
+      list-style-type: none;
+      padding: 0;
+  }
+  ul li {
+      margin: 5px 0;
+  }
+     
+
+
+     /* SERVICE CARD */
+
+     /* social media tabs  */
+     /* General styles */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping for smaller devices */
+}
+
+.example-2 .icon-content {
+  margin: 10px;
+  position: relative;
+  flex: 1 1 50px; /* Makes each icon flexible, with a base size */
+  max-width: 100px; /* Ensures icons don't get too large on bigger screens */
+}
+
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+
+.example-2 .icon-content a:hover {
+  color: white;
+}
+
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+/* Icon color customization */
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+  background-color: #128c7e;
+}
+
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+  background-color: #3b5998;
+}
+
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+  background-color: #ff0000;
+}
+
+/* Media queries for responsiveness */
+
+/* For devices with screen width <= 768px (tablets and smaller devices) */
+@media (max-width: 768px) {
+  .example-2 {
+    flex-direction: column; /* Stack the icons vertically */
+  }
+
+  .example-2 .icon-content {
+    margin: 10px 0; /* Vertical spacing between icons */
+    flex: 1 1 60px; /* More space for each icon */
+    max-width: 80px; /* Icons are slightly smaller */
+  }
+
+  .example-2 .icon-content a {
+    width: 45px; /* Slightly smaller icon size */
+    height: 45px;
+  }
+
+  .example-2 .icon-content a svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .example-2 .icon-content .tooltip {
+    font-size: 12px; /* Smaller font size for tooltip */
+  }
+}
+
+/* For devices with screen width <= 480px (phones and smaller) */
+@media (max-width: 480px) {
+  .example-2 {
+    flex-direction: column; /* Stack the icons vertically */
+    justify-content: flex-start; /* Align to the start */
+  }
+
+  .example-2 .icon-content {
+    margin: 8px 0; /* Reduce spacing */
+    flex: 1 1 50px; /* Slightly larger icon size for better touch targets */
+    max-width: 60px; /* Smaller max width for phones */
+  }
+
+  .example-2 .icon-content a {
+    width: 40px; /* Smaller size on mobile */
+    height: 40px;
+  }
+
+  .example-2 .icon-content a svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .example-2 .icon-content .tooltip {
+    font-size: 10px; /* Smaller font size for tooltips */
+    padding: 4px 8px; /* Smaller tooltip padding */
+  }
+}
+
+     /* social media tabs  */
+
+
+     /* Car Course Responsive Desgin */
+
+
+
+     /* Base Styles */
+#Courses {
+  padding: 50px 15px;
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.CourseCardTitle {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.PriceTag {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  text-align: center;
+  color: #333;
+}
+
+.car-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+/* Flexbox for layout */
+.car-section .d-flex {
+  display: flex;
+}
+
+.car-section .flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* Image Styling */
+img.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .CourseCardTitle {
+    font-size: 1.6rem;
+  }
+
+  .PriceTag {
+    font-size: 1.5rem;
+  }
+
+  .car-section {
+    flex-direction: column;
+  }
+
+  .car-section .d-flex {
+    flex-direction: column;
+  }
+
+  .car-section .flex-shrink-0 {
+    width: 100%;
+  }
+
+  .d-flex.flex-column {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .h2Car {
+    font-size: 1.5rem;
+  }
+
+  .CourseCardTitle {
+    font-size: 1.4rem;
+  }
+
+  .PriceTag {
+    font-size: 1.3rem;
+  }
+
+  .car-section {
+    flex-direction: column;
+  }
+
+  .car-section .d-flex {
+    flex-direction: column;
+  }
+
+  .car-section .flex-shrink-0 {
+    width: 100%;
+  }
+
+  .d-flex.flex-column {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .CourseCardTitle {
+    font-size: 1.2rem;
+  }
+
+  .PriceTag {
+    font-size: 1.1rem;
+  }
+
+  .car-section {
+    flex-direction: column;
+  }
+
+  .car-section .d-flex {
+    flex-direction: column;
+  }
+
+  .car-section .flex-shrink-0 {
+    width: 100%;
+  }
+
+  .d-flex.flex-column {
+    width: 100%;
+    padding: 8px;
+  }
+}
+ /* Car Course Responsive Desgin */
+
+
+ .ServiceCards-client{
+  font-size: large;
+  font-weight: 350;
+ }
+
+/* #Courses{
+  
+} */
+
+ /* Common Styles */
+ .floating-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  right: 20px;
+  background-color: #25D366;
+}
+.Home-btn {
+  right: 20px;
+  background-color: #ff0000;
+}
+
+.whatsapp-btn img {
+  width: 35px;
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+  right: 100px;
+  background-color: #1E3A5F;
+  display: none; /* Hidden initially */
+}
+
+.scroll-top-btn::before {
+  content: "▲";
+  color: white;
+  font-size: 20px;
+}
